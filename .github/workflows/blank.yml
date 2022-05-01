@@ -50,7 +50,7 @@ jobs:
       - name: run kics Scan
         run: |
           pwd
-          ls -al .
+          ls -al ./iac_examples
           docker run -v ./iac_examples:/path checkmarx/kics scan -p "/path"
       - name: Show results
         run: |
