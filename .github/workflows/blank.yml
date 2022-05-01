@@ -32,6 +32,11 @@ jobs:
           path: 'iac_examples'
           ignore_on_exit: results
           output_path: results-dir
+          output_formats: 'json,sarif'
+      - name: Show results
+        run: |
+          cat results-dir/results.sarif
+          cat results-dir/results.json
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
