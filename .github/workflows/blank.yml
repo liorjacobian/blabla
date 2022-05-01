@@ -49,8 +49,7 @@ jobs:
         run: mkdir -p results-dir
       - name: run kics Scan
         run: |
-          ls -al .
-          ls -al /
+          pwd
           docker run -v ./iac_examples:/path checkmarx/kics scan -p "/path"
       - name: Show results
         run: |
