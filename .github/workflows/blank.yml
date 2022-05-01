@@ -21,18 +21,34 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Mkdir results-dir
+#         # make sure results dir is created
+#         run: mkdir -p results-dir
+#       - name: run kics Scan
+#         uses: checkmarx/kics-github-action@v1.4
+#         with:
+#           path: 'iac_examples'
+#           ignore_on_exit: results
+#           output_path: results-dir
+#           output_formats: 'sarif'
+#       - name: Show results
+#         run: |
+#           cat results-dir/results.sarif
+#           cat results-dir/results.json
+#       - name: Upload SARIF file
+#         uses: github/codeql-action/upload-sarif@v1
+#         with:
+#           sarif_file: results-dir/results.sarif
+
     steps:
       - uses: actions/checkout@v2
       - name: Mkdir results-dir
         # make sure results dir is created
         run: mkdir -p results-dir
       - name: run kics Scan
-        uses: checkmarx/kics-github-action@v1.4
-        with:
-          path: 'iac_examples'
-          ignore_on_exit: results
-          output_path: results-dir
-          output_formats: 'sarif'
+        run: docker run -v iac_examples:/path checkmarx/kics scan -p "/path"
       - name: Show results
         run: |
           cat results-dir/results.sarif
@@ -41,3 +57,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: results-dir/results.sarif
+
