@@ -49,8 +49,8 @@ jobs:
         run: mkdir -p results-dir
       - name: run kics Scan
         run: |
-          pwd
-          docker run -v /home/runner/work/blabla/blabla/iac_examples:/path checkmarx/kics scan -p "/path" --ignore-on-exit results --report-formats sarif --output-path results-dir
+          ls -al
+          docker run -v /home/runner/work/blabla/blabla/iac_examples:/path -v /home/runner/work/blabla/blabla/results-dir:/results-dir checkmarx/kics scan -p "/path" --ignore-on-exit results --report-formats sarif --output-path /results-dir
       - name: Show results
         run: |
           cat results-dir/results.sarif
