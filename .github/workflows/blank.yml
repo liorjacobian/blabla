@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - name: Mkdir results-dir
+      - name: Mkdir results-dir1
         # make sure results dir is created
         run: mkdir -p results-dir
       - name: run kics Scan
