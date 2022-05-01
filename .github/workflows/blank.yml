@@ -50,7 +50,7 @@ jobs:
       - name: run kics Scan
         run: |
           pwd
-          docker run -v /home/runner/work/blabla/blabla/iac_examples:/path checkmarx/kics scan -p "/path"
+          docker run -v /home/runner/work/blabla/blabla/iac_examples:/path checkmarx/kics scan -p "/path" --ignore-on-exit results
       - name: Show results
         run: |
           cat results-dir/results.sarif
