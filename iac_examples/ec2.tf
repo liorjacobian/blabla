@@ -288,7 +288,7 @@ resource "aws_s3_bucket" "flowbucket" {
 }
 
 output "ec2_public_dns" {
-  description = "Web Host Public DNS name"
+  description = "Web Host Public DNS nfffame"
   value       = aws_instance.web_host.public_dns
   }
 
@@ -302,7 +302,7 @@ output "public_subnet" {
   value       = aws_subnet.web_subnet.id
 }
 
-output "public_subnet2" {
+output "public_subnet3" {
   description = "The ID of the Public subnet"
   value       = aws_subnet.web_subnet2.id
 }
