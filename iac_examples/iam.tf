@@ -22,7 +22,7 @@ resource "aws_iam_access_key" "user" {
   user = aws_iam_user.user.name
 }
 
-resource "aws_iam_user_policy" "userpolicy" {
+resource "aws_iam_user_policy" "userpoaerawerawerelicy" {
   name = "excess_policy"
   user = "${aws_iam_user.user.name}"
 
